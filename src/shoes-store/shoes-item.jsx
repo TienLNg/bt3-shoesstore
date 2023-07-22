@@ -4,9 +4,9 @@ export default class Shoesitem extends Component {
   render() {
 
     const item = this.props.shoes;
-    
+    const { onChangeSanPham, onAddSanPham } = this.props;
     return (
-      <div>
+      <div className='col-3 mt-5 gap-1'>
         <div className="card" style={{ width: "18rem" }}>
           <img src={item.image} className="card-img-top" alt="..." />
           <div className="card-body">
@@ -14,21 +14,20 @@ export default class Shoesitem extends Component {
             <p className="card-text">${item.price}</p>
             <div className="d-flex gap-1">
               <button
-                // onClick={() => {
-                //   //1. chaỵ hàm này
-                //   onChangeSanPham(item); // 2. gọi onChangeSanPham
+
+                onClick={() => {
+                  onChangeSanPham(item); 
   
-                //   // onChangeSanPham gọi thì nó sẽ gọi handleChangeSanPhamChiTiet
-                // }}
+                }}
                 className="btn btn-primary"
               >
                 Xem Chi Tiết
               </button>
   
               <button
-                // onClick={() => {
-                //   onAddSanPham(item);
-                // }}
+                onClick={() => {
+                  onAddSanPham(item);
+                }}
                 className="btn btn-primary"
               >
                 Thêm giỏ hàng
